@@ -56,8 +56,6 @@ create index idx_appointments_appointment_date on appointments(appointment_date)
 create index idx_appointments_status on appointments(status);
 create index idx_patients_patient_age on patients(patient_age);
 
-
-
 --Вимикаємо використання індексів для того, щоб продемонструвати optimizer control
 set enable_indexscan = off;
 
