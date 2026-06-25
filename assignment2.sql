@@ -78,11 +78,11 @@ diagnosis_rate as (
 	sum(cost) as total_profit
 	from filtered_appointments group by diagnosis
 )
---Створює колонку most_popular_diagnosis з назвою діагнозу з максимальною кількістю візитів та загаьлну ціну за ці візити
+--Створює колонку most_popular_diagnosis з назвою діагнозу з максимальною кількістю візитів та загальну ціну за ці візити
 select (select concat (diagnosis, ', total cost for all appointments: ', total_profit, ' UAH')
 from diagnosis_rate
 where count_ = (select max(count_) from diagnosis_rate)
 ) as most_popular_diagnosis;
 
 --відновлення використання індексів
-reset enable_indexscan;
+set enable_indexscan = on;
