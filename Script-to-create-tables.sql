@@ -1,3 +1,4 @@
+--створення таблиць пацієнтів, лікарів та відвідувань
 create table patients(
 	patient_id uuid primary key,
 	patient_name varchar(150) not null,
